@@ -1,0 +1,20 @@
+<body>
+  <div class="container">
+    <header>
+      <h1>Lunchtime Anděl</h1>
+    </header>
+ 
+    <ul>
+      {{#each restaurants}}
+        {{> restaurant}}
+      {{/each}}
+    </ul>
+  </div>
+</body>
+ 
+<template name="restaurant">
+  <h2>{{title}}</h2>
+  {{#each menu}}
+    <li>{{food}} :: {{price}}</li>
+  {{/each}}
+</template>
