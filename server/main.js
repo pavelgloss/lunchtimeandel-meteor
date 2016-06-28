@@ -1,6 +1,18 @@
 import { Meteor } from 'meteor/meteor';
-import '../imports/api/restaurants.js';
+import { Restaurants } from '../imports/api/restaurants.js';
+import { HomeOffice } from '../imports/loaders/HomeOffice.js';
 
 Meteor.startup(() => {
-  // code to run on server at startup
+    HomeOffice.menu = [];
+    HomeOffice.loadData();
+    menu = HomeOffice.menu;
+
+    restaurant = {
+        title: "HomeOffice",
+        menu: menu
+    };
+
+    console.log("HomeOffice loaded");
+
+    Restaurants.update('zNYsWYsfqpY8HFL5K', restaurant);
 });

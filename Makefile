@@ -6,6 +6,7 @@ all:
 
 install:
 	curl https://install.meteor.com/ | sh
+	meteor npm install cheerio
 
 run:
 	meteor
