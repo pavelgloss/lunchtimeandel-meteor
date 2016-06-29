@@ -17,7 +17,7 @@ class TradiceLoader {
             if (i + 1 === today) {
                 $(this).find('.item').each(function(i, elem) {
                     let name = $(this).find('div').first().text().trim();
-                    let price = $(this).find('div').last().text().trim();
+                    let price = $(this).find('div').last().text().trim().replace(',-', ' Kč');
                     loader.addToMenu(name, price);
                 });
             }

@@ -5,4 +5,10 @@ span.badge.price {
     color: #fff;
     background-color: #2196f3;
     border-radius: 2px;
+    top: 15px;
+}
+
+.collection .collection-item {
+    position: relative;
+    padding: 10px 80px 10px 20px;
 }
