@@ -4,8 +4,8 @@ const cheerio = require('cheerio');
 
 export class IlNostro {
   constructor() {
-    this.longitude = 14.400603;
-    this.latitude = 50.071509;
+    this.longitude = 14.4007850;
+    this.latitude = 50.0715817;
   }
 
   addToMenu(name, price = '') {
