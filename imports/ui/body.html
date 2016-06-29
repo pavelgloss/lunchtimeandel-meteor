@@ -5,7 +5,7 @@
         </header>
  
         <div class="row">
-            <div class="col-lg-6">
+            <div class="col l6">
                 <ul>
                     {{#each restaurants}}
                         {{> restaurant}}
@@ -13,7 +13,7 @@
                 </ul>
             </div>
 
-            <div class="col-lg-6">
+            <div class="col l6">
                 <div id="mapa" style="width:600px; height:400px;"></div>
                 <script type="text/javascript">
                     var stred = SMap.Coords.fromWGS84(14.404, 50.071);
@@ -46,9 +46,9 @@
  
 <template name="restaurant">
     <h2>{{title}}</h2>
-    <ul class="list-group">
+    <ul class="collection">
     {{#each menu}}
-        <li class="list-group-item"><span class="badge">{{price}}</span>{{food}}</li>
+        <li class="collection-item">{{food}}<span class="badge price">{{price}}</span></li>
     {{/each}}
     </ul>
 </template>

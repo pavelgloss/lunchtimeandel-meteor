@@ -1,1 +1,8 @@
 /* CSS declarations go here */
+span.badge.price {
+    font-weight: 300;
+    font-size: 0.8rem;
+    color: #fff;
+    background-color: #2196f3;
+    border-radius: 2px;
+}
