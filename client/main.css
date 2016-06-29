@@ -26,3 +26,25 @@ span.badge.price {
 h1 {
     font-size: 3.25rem;
 }
+
+.tooltip {
+    z-index: 1001;
+    pointer-events: none;
+    opacity: 0;
+    font-size: 0.8rem;
+    color: #fff;
+    background-color: #2196f3;
+    border-radius: 2px;
+    max-width: 500px;
+    padding: 15px;
+    border: 1px solid #1565c0;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+}
+
+.tooltip.hide {
+    opacity: 0;
+}
+
+.tooltip.show {
+    opacity: 1;
+}
