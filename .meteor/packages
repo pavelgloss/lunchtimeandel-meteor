@@ -24,3 +24,4 @@ momentjs:moment
 rzymek:moment-locale-cs
 materialize:materialize
 lookback:tooltips
+dburles:eslint
