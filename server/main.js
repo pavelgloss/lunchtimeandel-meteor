@@ -2,6 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { Restaurants } from '../imports/api/restaurants.js';
 import { HomeOffice } from '../imports/loaders/HomeOffice.js';
 import { Tradice } from '../imports/loaders/Tradice.js';
+import { IlNostro } from '../imports/loaders/IlNostro.js';
 
 Meteor.startup(() => {
     HomeOffice.menu = [];
@@ -34,4 +35,20 @@ Meteor.startup(() => {
     console.log("Tradice loaded");
 
     Restaurants.update('kLRwYuWMYWimQMwa6', restaurant);
+
+
+    IlNostro.menu = [];
+    IlNostro.loadData();
+    menu = IlNostro.menu;
+
+    restaurant = {
+        title: "IlNostro",
+        menu: menu,
+        latitude: IlNostro.latitude,
+        longitude: IlNostro.longitude
+    };
+
+    console.log("IlNostro loaded");
+
+    Restaurants.insert(restaurant);
 });
