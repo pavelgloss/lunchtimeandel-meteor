@@ -5,50 +5,47 @@ import { Tradice } from '/imports/loaders/Tradice.js';
 import { IlNostro } from '/imports/loaders/IlNostro.js';
 
 Meteor.startup(() => {
-    HomeOffice.menu = [];
-    HomeOffice.loadData();
-    menu = HomeOffice.menu;
+  let loader = new HomeOffice();
+  loader.menu = [];
+  loader.loadData();
+  let menu = loader.menu;
 
-    restaurant = {
-        title: "HomeOffice",
-        menu: menu,
-        latitude: HomeOffice.latitude,
-        longitude: HomeOffice.longitude
-    };
+  let restaurant = {
+    title: 'HomeOffice',
+    menu,
+    latitude: loader.latitude,
+    longitude: loader.longitude,
+  };
 
-    console.log("HomeOffice loaded");
-
-    Restaurants.update('peZFXo4Zm9FsfpMhD', restaurant);
-
-
-    Tradice.menu = [];
-    Tradice.loadData();
-    menu = Tradice.menu;
-
-    restaurant = {
-        title: "Tradice",
-        menu: menu,
-        latitude: Tradice.latitude,
-        longitude: Tradice.longitude
-    };
-
-    console.log("Tradice loaded");
-
-    Restaurants.update('gBibtNL36SdLE938w', restaurant);
+  Restaurants.update('peZFXo4Zm9FsfpMhD', restaurant);
 
 
-    IlNostro.menu = [];
-    IlNostro.loadData();
-    menu = IlNostro.menu;
+  loader = new Tradice();
+  loader.menu = [];
+  loader.loadData();
+  menu = loader.menu;
 
-    restaurant = {
-        title: "IlNostro",
-        menu: menu,
-        latitude: IlNostro.latitude,
-        longitude: IlNostro.longitude
-    };
+  restaurant = {
+    title: 'Tradice',
+    menu,
+    latitude: loader.latitude,
+    longitude: loader.longitude,
+  };
 
-    console.log("IlNostro loaded");
+  Restaurants.update('gBibtNL36SdLE938w', restaurant);
 
-    Restaurants.update('yzKd6v7Kwt6EGMKn9', restaurant);
+
+  loader = new IlNostro();
+  loader.menu = [];
+  loader.loadData();
+  menu = loader.menu;
+
+  restaurant = {
+    title: 'IlNostro',
+    menu,
+    latitude: loader.latitude,
+    longitude: loader.longitude,
+  };
+
+  Restaurants.update('yzKd6v7Kwt6EGMKn9', restaurant);
 });
