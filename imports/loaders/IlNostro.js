@@ -1,3 +1,5 @@
+/* global Meteor, moment */
+
 const cheerio = require('cheerio');
 
 export class IlNostro {
