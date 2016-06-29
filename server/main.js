@@ -18,7 +18,7 @@ Meteor.startup(() => {
 
     console.log("HomeOffice loaded");
 
-    Restaurants.update('DAwHA9tZb97ZTfSkX', restaurant);
+    Restaurants.update('peZFXo4Zm9FsfpMhD', restaurant);
 
 
     Tradice.menu = [];
@@ -34,7 +34,7 @@ Meteor.startup(() => {
 
     console.log("Tradice loaded");
 
-    Restaurants.update('kLRwYuWMYWimQMwa6', restaurant);
+    Restaurants.update('gBibtNL36SdLE938w', restaurant);
 
 
     IlNostro.menu = [];
@@ -50,5 +50,5 @@ Meteor.startup(() => {
 
     console.log("IlNostro loaded");
 
-    Restaurants.update('hW3pCxCqPmvd28z8S', restaurant);
+    Restaurants.update('yzKd6v7Kwt6EGMKn9', restaurant);
 });
