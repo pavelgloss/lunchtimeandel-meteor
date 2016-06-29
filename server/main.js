@@ -50,5 +50,5 @@ Meteor.startup(() => {
 
     console.log("IlNostro loaded");
 
-    Restaurants.insert(restaurant);
+    Restaurants.update('hW3pCxCqPmvd28z8S', restaurant);
 });
