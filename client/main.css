@@ -22,3 +22,7 @@ span.badge.price {
     bottom: 0px;
     height: 100%;
 }
+
+h1 {
+    font-size: 3.25rem;
+}

@@ -17,7 +17,7 @@
         </script>
  
         <div class="row">
-            <div class="col l6">
+            <div class="col l6 m6 s12">
                 <ul>
                     {{#each restaurants}}
                         {{> restaurant}}
@@ -32,7 +32,7 @@
                 </ul>
             </div>
 
-            <div class="col l6">
+            <div class="col l6 hide-on-med-and-down">
                 <div id="mapa" class="map"></div>
             </div>
         </div>
@@ -40,7 +40,7 @@
 </body>
  
 <template name="restaurant">
-    <h2>{{title}}</h2>
+    <h4>{{title}}</h4>
     <ul class="collection">
     {{#each menu}}
         <li class="collection-item">{{food}}<span class="badge price">{{price}}</span></li>
