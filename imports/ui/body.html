@@ -44,6 +44,8 @@
     <ul class="collection">
     {{#each menu}}
         <li class="collection-item">{{food}}<span class="badge price">{{price}}</span></li>
+    {{else}}
+        <li class="collection-item grey lighten-4 grey-text text-darken-1">Denní menu není k dispozici.</li>
     {{/each}}
     </ul>
 </template>
