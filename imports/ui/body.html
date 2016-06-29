@@ -5,8 +5,8 @@
         </header>
 
         <script type="text/javascript">
-            var stred = SMap.Coords.fromWGS84(14.404, 50.071);
-            var mapa = new SMap(JAK.gel("mapa"), stred, 16);
+            var stred = SMap.Coords.fromWGS84(14.404, 50.0705);
+            var mapa = new SMap(JAK.gel("mapa"), stred, 17);
             mapa.addDefaultLayer(SMap.DEF_BASE).enable();
 
             //mapa.addDefaultControls();
@@ -33,7 +33,7 @@
             </div>
 
             <div class="col l6">
-                <div id="mapa" style="width:600px; height:400px;"></div>
+                <div id="mapa" class="map"></div>
             </div>
         </div>
     </div>

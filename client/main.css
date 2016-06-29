@@ -12,3 +12,13 @@ span.badge.price {
     position: relative;
     padding: 10px 80px 10px 20px;
 }
+
+.map {
+    width: calc(50% - 20px);
+    height: 800px;
+    position: fixed !important;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    height: 100%;
+}
