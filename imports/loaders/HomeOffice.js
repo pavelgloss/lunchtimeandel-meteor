@@ -42,4 +42,8 @@ class HomeOfficeLoader {
     }
 }
 
-export const HomeOffice = new HomeOfficeLoader();
+HomeOffice = new HomeOfficeLoader();
+HomeOffice.longitude = 14.4011792;
+HomeOffice.latitude = 50.0716481;
+
+export var HomeOffice;

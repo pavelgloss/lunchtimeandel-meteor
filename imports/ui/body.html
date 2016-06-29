@@ -3,42 +3,37 @@
         <header>
             <h1>Lunchtime Anděl</h1>
         </header>
+
+        <script type="text/javascript">
+            var stred = SMap.Coords.fromWGS84(14.404, 50.071);
+            var mapa = new SMap(JAK.gel("mapa"), stred, 16);
+            mapa.addDefaultLayer(SMap.DEF_BASE).enable();
+
+            //mapa.addDefaultControls();
+
+            var layer = new SMap.Layer.Marker();
+            mapa.addLayer(layer);
+            layer.enable();
+        </script>
  
         <div class="row">
             <div class="col l6">
                 <ul>
                     {{#each restaurants}}
                         {{> restaurant}}
+
+                        <script type="text/javascript">
+                            var options = {};
+                            position = SMap.Coords.fromWGS84({{longitude}}, {{latitude}})
+                            var marker = new SMap.Marker(position, "restaurantMarker", options);
+                            layer.addMarker(marker);
+                        </script>
                     {{/each}}
                 </ul>
             </div>
 
             <div class="col l6">
                 <div id="mapa" style="width:600px; height:400px;"></div>
-                <script type="text/javascript">
-                    var stred = SMap.Coords.fromWGS84(14.404, 50.071);
-                    var mapa = new SMap(JAK.gel("mapa"), stred, 16);
-                    mapa.addDefaultLayer(SMap.DEF_BASE).enable();
-
-                    //mapa.addDefaultControls();
-
-                    var layer = new SMap.Layer.Marker();
-                    mapa.addLayer(layer);
-                    layer.enable();
-
-                    var options = {};
-                    homeOfficePosition = SMap.Coords.fromWGS84(14.4011792, 50.0716481)
-                    var homeOfficeMarker = new SMap.Marker(homeOfficePosition, "myMarker", options);
-                    layer.addMarker(homeOfficeMarker);
-
-                    iLNostroPosition = SMap.Coords.fromWGS84(14.400603, 50.071509)
-                    var iLNostroMarker = new SMap.Marker(iLNostroPosition, "myMarker", options);
-                    layer.addMarker(iLNostroMarker); 
-
-                    tradicePosition = SMap.Coords.fromWGS84(14.401515, 50.06924)
-                    var tradiceMarker = new SMap.Marker(tradicePosition, "myMarker", options);
-                    layer.addMarker(tradiceMarker);       
-                </script>
             </div>
         </div>
     </div>

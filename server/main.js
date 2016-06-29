@@ -9,10 +9,12 @@ Meteor.startup(() => {
 
     restaurant = {
         title: "HomeOffice",
-        menu: menu
+        menu: menu,
+        latitude: HomeOffice.latitude,
+        longitude: HomeOffice.longitude
     };
 
     console.log("HomeOffice loaded");
 
-    Restaurants.update('zNYsWYsfqpY8HFL5K', restaurant);
+    Restaurants.update('DAwHA9tZb97ZTfSkX', restaurant);
 });
