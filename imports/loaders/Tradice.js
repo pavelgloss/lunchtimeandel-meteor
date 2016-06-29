@@ -4,8 +4,8 @@ const cheerio = require('cheerio');
 
 export class Tradice {
   constructor() {
-    this.longitude = 14.401515;
-    this.latitude = 50.06924;
+    this.longitude = 14.4013353;
+    this.latitude = 50.0691197;
   }
   addToMenu(name, price = '') {
     this.menu.push({
