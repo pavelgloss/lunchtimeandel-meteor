@@ -3,6 +3,7 @@ import { Restaurant } from './Restaurant.js';
 export class HomeOffice extends Restaurant {
   constructor() {
     super();
+    this.title = 'HomeOffice';
     this.longitude = 14.4011792;
     this.latitude = 50.0716481;
   }

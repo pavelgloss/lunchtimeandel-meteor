@@ -3,6 +3,10 @@
 const cheerio = require('cheerio');
 
 export class Restaurant {
+  constructor() {
+    this.menu = [];
+  }
+
   addToMenu(name, price = '') {
     this.menu.push({
       food: name,
