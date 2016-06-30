@@ -7,3 +7,11 @@ This project is just a result of experimenting with [Meteor](https://www.meteor.
 - most likely doesn't implement all Meteor best practices
 - contains a lot of hardcoded, shitty code
 - shows me how interesting Meteor is :-)
+
+## How to run it?
+```
+git clone git@github.com:pavelsterba/lunchtimeandel-meteor.git
+cd lunchtimeandel-meteor
+make install
+make run
+```
