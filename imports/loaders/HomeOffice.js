@@ -1,27 +1,19 @@
-/* global Meteor, moment */
+import { Restaurant } from './Restaurant.js';
 
-const cheerio = require('cheerio');
-
-export class HomeOffice {
+export class HomeOffice extends Restaurant {
   constructor() {
+    super();
     this.longitude = 14.4011792;
     this.latitude = 50.0716481;
   }
 
-  addToMenu(name, price = '') {
-    this.menu.push({
-      food: name,
-      price,
-    });
-  }
-
   loadData() {
-    const today = moment().format('dddd D/M');
+    const today = super.moment().format('dddd D/M');
     const location = 'Radlická';
     const locationAfter = 'Butovice';
     let dayFound = false;
     let locationFound = false;
-    const $ = cheerio.load(Meteor.http.get('http://homeofficebistro.cz/tydenni-menu/').content);
+    const $ = super.load('http://homeofficebistro.cz/tydenni-menu/');
 
     const menuRows = $('table tr');
 
@@ -45,7 +37,7 @@ export class HomeOffice {
       }
 
       if (dayFound === true && locationFound === true && name !== location) {
-        this.addToMenu(name);
+        super.addToMenu(name);
       }
     }
   }

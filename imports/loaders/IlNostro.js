@@ -1,24 +1,16 @@
-/* global Meteor, moment */
+import { Restaurant } from './Restaurant.js';
 
-const cheerio = require('cheerio');
-
-export class IlNostro {
+export class IlNostro extends Restaurant {
   constructor() {
+    super();
     this.longitude = 14.4007850;
     this.latitude = 50.0715817;
   }
 
-  addToMenu(name, price = '') {
-    this.menu.push({
-      food: name,
-      price,
-    });
-  }
-
   loadData() {
-    const today = moment().day();
-    const $ = cheerio.load(Meteor.http.get('http://www.ilnostro.cz/cz/tydenni-menu').content);
-    const loader = this;
+    const today = super.moment().day();
+    const $ = super.load('http://www.ilnostro.cz/cz/tydenni-menu');
+    const food = [];
 
     $('.obsah table').each(function parseMenu(i) {
       if (i + 1 === today) {
@@ -31,9 +23,13 @@ export class IlNostro {
             .last()
             .text()
             .trim();
-          loader.addToMenu(name, price);
+          food.push([name, price]);
         });
       }
     });
+
+    for (let i = 0; i < food.length; i++) {
+      super.addToMenu(food[i][0], food[i][1]);
+    }
   }
 }

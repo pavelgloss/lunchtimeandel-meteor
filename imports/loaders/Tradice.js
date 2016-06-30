@@ -1,23 +1,16 @@
-/* global Meteor, moment */
+import { Restaurant } from './Restaurant.js';
 
-const cheerio = require('cheerio');
-
-export class Tradice {
+export class Tradice extends Restaurant {
   constructor() {
+    super();
     this.longitude = 14.4013353;
     this.latitude = 50.0691197;
   }
-  addToMenu(name, price = '') {
-    this.menu.push({
-      food: name,
-      price,
-    });
-  }
 
   loadData() {
-    const today = moment().day();
-    const $ = cheerio.load(Meteor.http.get('http://www.tradiceandel.cz/cz/denni-nabidka/').content);
-    const loader = this;
+    const today = super.moment().day();
+    const $ = super.load('http://www.tradiceandel.cz/cz/denni-nabidka/');
+    const food = [];
 
     $('.separator-section').each(function parseMenu(i) {
       if (i + 1 === today) {
@@ -31,9 +24,13 @@ export class Tradice {
             .text()
             .trim()
             .replace(',-', ' Kč');
-          loader.addToMenu(name, price);
+          food.push([name, price]);
         });
       }
     });
+
+    for (let i = 0; i < food.length; i++) {
+      super.addToMenu(food[i][0], food[i][1]);
+    }
   }
 }
