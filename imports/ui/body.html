@@ -45,7 +45,7 @@
     {{#each menu}}
         <li class="collection-item truncate tooltipped" data-tooltip="{{food}}">{{food}}<span class="badge price">{{price}}</span></li>
     {{else}}
-        <li class="collection-item grey lighten-4 grey-text text-darken-1">Denní menu není k dispozici.</li>
+        <li class="collection-item grey lighten-4 grey-text text-darken-1">Denní menu není {{#if isWeekend}}o víkendu {{/if}}k dispozici.</li>
     {{/each}}
     </ul>
 

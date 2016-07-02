@@ -8,3 +8,10 @@ Template.body.helpers({
     return Restaurants.find({});
   },
 });
+
+Template.restaurant.helpers({
+  isWeekend() {
+    const today = (new Date()).getDay();
+    return today === 6 || today === 0;
+  },
+});
