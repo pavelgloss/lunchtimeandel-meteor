@@ -9,7 +9,8 @@
             var mapa = new SMap(JAK.gel("mapa"), stred, 17);
             mapa.addDefaultLayer(SMap.DEF_BASE).enable();
 
-            //mapa.addDefaultControls();
+            var mouseControl = new SMap.Control.Mouse(SMap.MOUSE_PAN);
+            mapa.addControl(mouseControl);
 
             var layer = new SMap.Layer.Marker();
             mapa.addLayer(layer);
