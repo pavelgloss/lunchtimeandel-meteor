@@ -23,9 +23,17 @@
                         {{> restaurant}}
 
                         <script type="text/javascript">
-                            var options = {};
-                            position = SMap.Coords.fromWGS84({{longitude}}, {{latitude}})
-                            var marker = new SMap.Marker(position, "restaurantMarker", options);
+                            var options = {
+                                title: '{{title}}',
+                            };
+                            var position = SMap.Coords.fromWGS84({{longitude}}, {{latitude}});
+                            var marker = new SMap.Marker(position, "{{title}}Marker", options);
+
+                            var card = new SMap.Card();
+                            card.getHeader().innerHTML = "<b>{{title}}</b>";
+                            card.getBody().innerHTML = "<ul>{{#each menu}}<li>&bull; {{food}}</li>{{else}}<li><em>Denní menu není {{#if isWeekend}}o víkendu {{/if}}k dispozici.</em></li>{{/each}}</ul>";
+                            marker.decorate(SMap.Marker.Feature.Card, card);
+
                             layer.addMarker(marker);
                         </script>
                     {{/each}}

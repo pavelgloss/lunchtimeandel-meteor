@@ -9,9 +9,7 @@ Template.body.helpers({
   },
 });
 
-Template.restaurant.helpers({
-  isWeekend() {
-    const today = (new Date()).getDay();
-    return today === 6 || today === 0;
-  },
+Template.registerHelper('isWeekend', function isWeekend() {
+  const today = (new Date()).getDay();
+  return today === 6 || today === 0;
 });
